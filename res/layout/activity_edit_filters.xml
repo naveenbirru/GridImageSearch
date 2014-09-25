@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.gridimagesearch.EditFilters" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Advanced Settings" />
+
+    <TextView
+        android:id="@+id/ImageSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignRight="@+id/SiteFilterTxt"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="14dp"
+        android:text="Image" />
+
+    <Spinner
+        android:id="@+id/imgSizeSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imgColorSpinner"
+        android:layout_alignTop="@+id/ImageSize"
+        android:layout_toRightOf="@+id/textView1"
+        android:entries="@array/imgSize_array" />
+
+    <TextView
+        android:id="@+id/colorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ImageSize"
+        android:layout_marginTop="16dp"
+        android:layout_toLeftOf="@+id/imgColorSpinner"
+        android:text="Color" />
+
+    <Spinner
+        android:id="@+id/imgColorSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imgTypeSpinner"
+        android:layout_alignTop="@+id/colorText"
+        android:layout_toRightOf="@+id/textView1"
+        android:entries="@array/imgColor_array"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/ImageTypeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/colorText"
+        android:layout_marginTop="20dp"
+        android:text="Image Type" />
+
+    <Spinner
+        android:id="@+id/imgTypeSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etSite"
+        android:layout_alignTop="@+id/ImageTypeText"
+        android:layout_toRightOf="@+id/textView1"
+        android:entries="@array/imgType_array"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:id="@+id/SiteFilterTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ImageTypeText"
+        android:layout_marginTop="22dp"
+        android:text="Site Filter" />
+
+    <EditText
+        android:id="@+id/etSite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/SiteFilterTxt"
+        android:layout_toRightOf="@+id/textView1"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etSite"
+        android:onClick="onFiltersDone"
+        android:layout_marginTop="14dp"
+        android:layout_toRightOf="@+id/ImageTypeText"
+        android:text="Done" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnDone"
+        android:layout_alignBottom="@+id/btnDone"
+        android:onClick="onClearFilters"
+        android:layout_marginLeft="37dp"
+        android:layout_toRightOf="@+id/btnDone"
+        android:text="Clear Filters" />
+
+</RelativeLayout>
