@@ -130,7 +130,7 @@ public class Search extends Activity {
     	String query = etQuery.getText().toString();
     	//Toast.makeText(this, "Search for "+ query, Toast.LENGTH_SHORT).show();
         AsyncHttpClient client = new AsyncHttpClient();
-        
+        aImageResults.clear();
         String searchUrl = "https://ajax.googleapis.com/ajax/services/search/images?v=1.0&rsz=8&q="+ query;
         String addfilters = filters.getSearchFilters();
         if(addfilters == null) {
@@ -141,7 +141,7 @@ public class Search extends Activity {
         //searchUrl = "https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=android" ;
        //Toast.makeText(this, "Search for "+ googleQuery, Toast.LENGTH_SHORT).show();
         
-        client.get(searchUrl, new JsonHttpResponseHandler(){
+        client.get(googleQuery, new JsonHttpResponseHandler(){
         
         @Override
         public void onSuccess(int statusCode, Header[] headers,
